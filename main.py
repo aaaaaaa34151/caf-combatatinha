@@ -159,17 +159,27 @@ Conquistar Cutting Edge.
 
 ---
 
-### ✅ Requisitos Mínimos
-- Item Level mínimo: 280+
-- Alta performance
-- Presença quase obrigatória
+### 📜 Regras de Conduta
+
+• Respeito e boa convivência são fundamentais para manter um ambiente agradável e produtivo para todos.
+
+• Cobranças entre jogadores não serão permitidas. Qualquer feedback ou cobrança será feito exclusivamente pelo Raid Leader ou pela Diretoria.
+
+• Zero toxicidade. Não serão toleradas ofensas, provocações ou atitudes que prejudiquem o grupo.
 
 ---
 
-### 📜 Regras de Conduta
-- Respeito absoluto
-- Apenas o Raid Leader faz cobranças
-- Zero toxicidade
+### ✅ Requisitos Mínimos
+
+• Item Level mínimo: 280.
+
+• Gemas no nível máximo e encantamentos no nível máximo em todos os equipamentos relevantes.
+
+• A presença é de extrema importância para o progresso do Core e para o alcance dos nossos objetivos.
+
+• Atrasos ou faltas devem ser comunicados com antecedência, sempre que possível.
+
+• O sistema de loot será realizado via RCLootCouncil, utilizando um sistema de pontuação para garantir uma distribuição justa e transparente dos itens.
 """
     },
 
@@ -633,20 +643,9 @@ elif pagina == "🔐 Painel Admin":
 
             m1, m2, m3 = st.columns(3)
 
-            m1.metric(
-                "Pendentes",
-                pendentes
-            )
-
-            m2.metric(
-                "Aprovados",
-                aprovados
-            )
-
-            m3.metric(
-                "Rejeitados",
-                rejeitados
-            )
+            m1.metric("Pendentes", pendentes)
+            m2.metric("Aprovados", aprovados)
+            m3.metric("Rejeitados", rejeitados)
 
             st.divider()
 
@@ -713,29 +712,12 @@ elif pagina == "🔐 Painel Admin":
 
                     with info1:
 
-                        st.write(
-                            f"**Realm:** {row['realm']}"
-                        )
-
-                        st.write(
-                            f"**Item Level:** {row['ilvl']}"
-                        )
-
-                        st.write(
-                            f"**Especializações:** {specs}"
-                        )
-
-                        st.write(
-                            f"**Função:** {role}"
-                        )
-
-                        st.write(
-                            f"**Off Spec:** {offspec}"
-                        )
-
-                        st.write(
-                            f"**Discord:** {row['discord']}"
-                        )
+                        st.write(f"**Realm:** {row['realm']}")
+                        st.write(f"**Item Level:** {row['ilvl']}")
+                        st.write(f"**Especializações:** {specs}")
+                        st.write(f"**Função:** {role}")
+                        st.write(f"**Off Spec:** {offspec}")
+                        st.write(f"**Discord:** {row['discord']}")
 
                     with info2:
 
@@ -744,9 +726,7 @@ elif pagina == "🔐 Painel Admin":
                             f"{row['experience']}"
                         )
 
-                        st.write(
-                            f"**Cores:** {cores}"
-                        )
+                        st.write(f"**Cores:** {cores}")
 
                         st.write(
                             f"**Logs:** "
