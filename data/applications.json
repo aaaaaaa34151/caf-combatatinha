@@ -128,5 +128,26 @@
     ],
     "motivation": "estou fazendo novamente porque o kotori não sabe fazer banco de dados <3",
     "status": "Pendente"
+  },
+  {
+    "id": "fbeb22bd-de57-46c4-a775-271cacc6c169",
+    "timestamp": "2026-05-11T23:53:24.099655",
+    "character_name": "Zurletjin",
+    "realm": "Area-52",
+    "class_name": "Caçador",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Domínio das Feras"
+    ],
+    "ilvl": 282,
+    "experience": "Menos de 1 ano",
+    "discord": "Zurleta",
+    "logs_link": "https://raider.io/characters/us/area-52/Zurletjin",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "Jogo WoW casualmente desde 2007. Passei por todas as expansões, mas na maioria delas sem focar em endgame. No BFA, cheguei a fazer conteúdo heroico na última season. Mas é na expansão atual que estou indo mais longe na minha jornada no WoW.",
+    "status": "Pendente"
   }
 ]
