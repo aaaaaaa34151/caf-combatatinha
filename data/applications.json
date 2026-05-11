@@ -1,1 +1,25 @@
-
+[
+  {
+    "id": "dff2e2dc-b1f3-4718-99f4-cf2699d0d9e2",
+    "timestamp": "2026-05-11T23:46:39.605377",
+    "character_name": "Wurthmas",
+    "realm": "Area 52",
+    "class_name": "Druida",
+    "role": "Tank",
+    "offspec": "Healer",
+    "specs": [
+      "Equilíbrio",
+      "Guardião",
+      "Restauração"
+    ],
+    "ilvl": 282,
+    "experience": "Menos de 1 ano",
+    "discord": "wurthmann",
+    "logs_link": "https://br.warcraftlogs.com/character/id/101684540",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "Sou novo no WoW, comecei na terceira temporada de TWW mas me dedico bastante ao End Game e tenho interesse na progressão.",
+    "status": "Pendente"
+  }
+]
