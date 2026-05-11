@@ -721,7 +721,7 @@ elif pagina == "🔐 Painel Admin":
                     ),
                     "status": st.column_config.TextColumn(
                         "Status",
-                        width="medium"
+                        width="small"
                     ),
                 }
             )
