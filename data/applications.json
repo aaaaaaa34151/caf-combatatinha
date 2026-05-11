@@ -149,5 +149,26 @@
     ],
     "motivation": "Jogo WoW casualmente desde 2007. Passei por todas as expansões, mas na maioria delas sem focar em endgame. No BFA, cheguei a fazer conteúdo heroico na última season. Mas é na expansão atual que estou indo mais longe na minha jornada no WoW.",
     "status": "Pendente"
+  },
+  {
+    "id": "ed43f3ad-c510-48f0-8149-535f40024dbc",
+    "timestamp": "2026-05-11T23:55:42.177717",
+    "character_name": "Kyriam",
+    "realm": "Illidam",
+    "class_name": "Paladino",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Retribuição"
+    ],
+    "ilvl": 283,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "Kyraszone",
+    "logs_link": "https://www.warcraftlogs.com/character/us/illidan/kyriam?",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
