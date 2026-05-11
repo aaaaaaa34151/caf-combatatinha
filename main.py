@@ -701,7 +701,7 @@ elif pagina == "🔐 Painel Admin":
                     ),
                     "specs": st.column_config.TextColumn(
                         "Especialização",
-                        width="small"
+                        width="medium"
                     ),
                     "role": st.column_config.TextColumn(
                         "Função",
