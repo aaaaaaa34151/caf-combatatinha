@@ -761,6 +761,7 @@ elif pagina == "🔐 Painel Admin":
                     f"{row['class_name']} "
                     f"({specs}) • "
                     f"{role} • "
+                    f"Core: {cores} • "
                     f"{row['status']}",
                     expanded=(
                         st.session_state.get("open_expander")
