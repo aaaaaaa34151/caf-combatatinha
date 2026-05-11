@@ -170,5 +170,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "b8c04c22-ad3a-479e-aed1-fa310d0d9714",
+    "timestamp": "2026-05-11T23:56:43.871564",
+    "character_name": "Warumono",
+    "realm": "Sargeras",
+    "class_name": "Guerreiro",
+    "role": "Tank",
+    "offspec": "Não",
+    "specs": [
+      "Proteção"
+    ],
+    "ilvl": 280,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "Warumono",
+    "logs_link": "",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
