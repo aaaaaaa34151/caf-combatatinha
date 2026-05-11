@@ -191,5 +191,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "ad17223d-f239-48fa-b936-4e9c2d001e60",
+    "timestamp": "2026-05-11T23:58:07.204839",
+    "character_name": "hiroshiman",
+    "realm": "area-52",
+    "class_name": "Xamã",
+    "role": "DPS",
+    "offspec": "Healer",
+    "specs": [
+      "Elemental"
+    ],
+    "ilvl": 283,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "histron#0372",
+    "logs_link": "https://www.warcraftlogs.com/character/us/area-52/hiroshiman",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "jogo wow desde cataclismo, raidei mitico no legion e inicio do shadowlands.",
+    "status": "Pendente"
   }
 ]
