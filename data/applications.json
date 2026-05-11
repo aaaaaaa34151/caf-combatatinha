@@ -107,5 +107,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "318ce1c4-64c6-457a-a53c-5f5abf545c31",
+    "timestamp": "2026-05-11T23:53:22.537273",
+    "character_name": "Gurumancia",
+    "realm": "Stormrage",
+    "class_name": "Mago",
+    "role": "DPS",
+    "offspec": "Tank",
+    "specs": [
+      "Arcano"
+    ],
+    "ilvl": 282,
+    "experience": "1-3 anos",
+    "discord": "lipisiq",
+    "logs_link": "https://raider.io/characters/us/stormrage/Gurumancia",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "estou fazendo novamente porque o kotori não sabe fazer banco de dados <3",
+    "status": "Pendente"
   }
 ]
