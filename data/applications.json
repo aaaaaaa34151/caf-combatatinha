@@ -86,5 +86,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "01c31370-f3b1-4c69-8a9c-634833f41228",
+    "timestamp": "2026-05-11T23:50:22.365286",
+    "character_name": "Kuunochi",
+    "realm": "Stormrage",
+    "class_name": "Monge",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Mestre Cervejeiro"
+    ],
+    "ilvl": 281,
+    "experience": "Menos de 1 ano",
+    "discord": "Sig baguncinha",
+    "logs_link": "https://raider.io/characters/us/stormrage/Kuunochi",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
