@@ -43,6 +43,17 @@ def init_db():
     except:
         pass
 
+    # Migração automática: aplicações antigas com Time Baine viram Time Sylvanas
+    c.execute("""
+        UPDATE applications
+        SET cores = REPLACE(
+            cores,
+            'Time Baine (Mítico Soft)',
+            'Time Sylvanas (Mítico Soft)'
+        )
+        WHERE cores LIKE '%Time Baine (Mítico Soft)%'
+    """)
+
     conn.commit()
     conn.close()
 
@@ -183,12 +194,12 @@ Conquistar Cutting Edge.
 """
     },
 
-    "Time Baine (Mítico Soft)": {
+    "Time Sylvanas (Mítico Soft)": {
         "leader": "Grilo",
         "ilvl_min": 276,
 
         "rules": """
-**🦗 TIME BAINE (MÍTICO SOFT)**
+**🏹 TIME SYLVANAS (MÍTICO SOFT)**
 
 **Filosofia:**  
 Progressão consistente sem virar obrigação.  
