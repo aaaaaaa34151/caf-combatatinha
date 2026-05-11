@@ -295,7 +295,7 @@ def safe_json_list(value):
 st.set_page_config(
     page_title="Café com Batatinha",
     page_icon="☕",
-    layout="centered"
+    layout="wide"
 )
 
 # =====================================================
@@ -308,6 +308,7 @@ st.markdown("""
 .block-container {
     padding-top: 2rem;
     padding-bottom: 2rem;
+    max-width: 95vw;
 }
 
 div[data-testid="stExpander"] {
@@ -482,7 +483,7 @@ if pagina == "📝 Formulário de Aplicação":
 
             submit = st.form_submit_button(
                 "🚀 ENVIAR APLICAÇÃO",
-                use_container_width=True,
+                width="stretch",
                 type="primary"
             )
 
@@ -575,7 +576,7 @@ elif pagina == "🔐 Painel Admin":
             if st.button(
                 "Entrar",
                 type="primary",
-                use_container_width=True
+                width="stretch"
             ):
 
                 if (
@@ -603,7 +604,7 @@ elif pagina == "🔐 Painel Admin":
 
             if st.button(
                 "🚪 Sair",
-                use_container_width=True
+                width="stretch"
             ):
 
                 st.session_state.logged_in = False
@@ -683,8 +684,46 @@ elif pagina == "🔐 Painel Admin":
                         "status"
                     ]
                 ],
-                use_container_width=True,
-                hide_index=True
+                width="stretch",
+                hide_index=True,
+                column_config={
+                    "timestamp": st.column_config.TextColumn(
+                        "Data",
+                        width="medium"
+                    ),
+                    "character_name": st.column_config.TextColumn(
+                        "Personagem",
+                        width="medium"
+                    ),
+                    "class_name": st.column_config.TextColumn(
+                        "Classe",
+                        width="medium"
+                    ),
+                    "specs": st.column_config.TextColumn(
+                        "Especialização",
+                        width="large"
+                    ),
+                    "role": st.column_config.TextColumn(
+                        "Função",
+                        width="small"
+                    ),
+                    "offspec": st.column_config.TextColumn(
+                        "Off Spec",
+                        width="small"
+                    ),
+                    "ilvl": st.column_config.NumberColumn(
+                        "Ilvl",
+                        width="small"
+                    ),
+                    "cores": st.column_config.TextColumn(
+                        "Cores",
+                        width="large"
+                    ),
+                    "status": st.column_config.TextColumn(
+                        "Status",
+                        width="medium"
+                    ),
+                }
             )
 
             st.divider()
@@ -797,7 +836,7 @@ elif pagina == "🔐 Painel Admin":
                         if st.button(
                             "✅ Aprovar",
                             key=f"approve_{row['id']}",
-                            use_container_width=True
+                            width="stretch"
                         ):
 
                             st.session_state["open_expander"] = expander_key
@@ -814,7 +853,7 @@ elif pagina == "🔐 Painel Admin":
                         if st.button(
                             "❌ Rejeitar",
                             key=f"reject_{row['id']}",
-                            use_container_width=True
+                            width="stretch"
                         ):
 
                             st.session_state["open_expander"] = expander_key
@@ -831,7 +870,7 @@ elif pagina == "🔐 Painel Admin":
                         if st.button(
                             "⏳ Pendente",
                             key=f"pending_{row['id']}",
-                            use_container_width=True
+                            width="stretch"
                         ):
 
                             st.session_state["open_expander"] = expander_key
