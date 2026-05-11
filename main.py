@@ -279,6 +279,15 @@ def reset_specs():
             if key in st.session_state:
                 st.session_state[key] = False
 
+
+def safe_json_list(value):
+
+    try:
+        return json.loads(value)
+    except:
+        return []
+
+
 # =====================================================
 # ====================== CONFIG =======================
 # =====================================================
@@ -623,11 +632,20 @@ elif pagina == "🔐 Painel Admin":
                 df_display["timestamp"]
             ).dt.strftime("%d/%m/%Y %H:%M")
 
-            df_display["cores"] = df_display["cores"].apply(
-                lambda x: ", ".join(json.loads(x))
+            df_display["specs"] = df_display["specs"].apply(
+                lambda x: ", ".join(safe_json_list(x))
                 if isinstance(x, str)
                 else ""
             )
+
+            df_display["cores"] = df_display["cores"].apply(
+                lambda x: ", ".join(safe_json_list(x))
+                if isinstance(x, str)
+                else ""
+            )
+
+            df_display["role"] = df_display["role"].fillna("Não informado")
+            df_display["offspec"] = df_display["offspec"].fillna("Não")
 
             aprovados = len(
                 df[df["status"] == "Aprovado"]
@@ -657,7 +675,9 @@ elif pagina == "🔐 Painel Admin":
                         "timestamp",
                         "character_name",
                         "class_name",
+                        "specs",
                         "role",
+                        "offspec",
                         "ilvl",
                         "cores",
                         "status"
@@ -674,11 +694,11 @@ elif pagina == "🔐 Painel Admin":
             for _, row in df.iterrows():
 
                 specs = ", ".join(
-                    json.loads(row["specs"])
+                    safe_json_list(row["specs"])
                 )
 
                 cores = ", ".join(
-                    json.loads(row["cores"])
+                    safe_json_list(row["cores"])
                 )
 
                 role = (
@@ -712,12 +732,37 @@ elif pagina == "🔐 Painel Admin":
 
                     with info1:
 
-                        st.write(f"**Realm:** {row['realm']}")
-                        st.write(f"**Item Level:** {row['ilvl']}")
-                        st.write(f"**Especializações:** {specs}")
-                        st.write(f"**Função:** {role}")
-                        st.write(f"**Off Spec:** {offspec}")
-                        st.write(f"**Discord:** {row['discord']}")
+                        st.write(
+                            f"**Nome do Personagem:** {row['character_name']}"
+                        )
+
+                        st.write(
+                            f"**Realm:** {row['realm']}"
+                        )
+
+                        st.write(
+                            f"**Classe:** {row['class_name']}"
+                        )
+
+                        st.write(
+                            f"**Item Level:** {row['ilvl']}"
+                        )
+
+                        st.write(
+                            f"**Especializações:** {specs}"
+                        )
+
+                        st.write(
+                            f"**Função:** {role}"
+                        )
+
+                        st.write(
+                            f"**Off Spec:** {offspec}"
+                        )
+
+                        st.write(
+                            f"**Discord:** {row['discord']}"
+                        )
 
                     with info2:
 
@@ -726,7 +771,9 @@ elif pagina == "🔐 Painel Admin":
                             f"{row['experience']}"
                         )
 
-                        st.write(f"**Cores:** {cores}")
+                        st.write(
+                            f"**Cores:** {cores}"
+                        )
 
                         st.write(
                             f"**Logs:** "
