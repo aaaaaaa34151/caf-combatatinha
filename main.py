@@ -288,6 +288,29 @@ def safe_json_list(value):
         return []
 
 
+def application_exists(character_name, realm):
+
+    conn = sqlite3.connect("applications.db")
+    c = conn.cursor()
+
+    c.execute("""
+        SELECT id, status
+        FROM applications
+        WHERE LOWER(TRIM(character_name)) = LOWER(TRIM(?))
+        AND LOWER(TRIM(realm)) = LOWER(TRIM(?))
+        LIMIT 1
+    """, (
+        character_name,
+        realm
+    ))
+
+    result = c.fetchone()
+
+    conn.close()
+
+    return result
+
+
 # =====================================================
 # ====================== CONFIG =======================
 # =====================================================
@@ -503,6 +526,22 @@ if pagina == "📝 Formulário de Aplicação":
                     )
 
                 else:
+
+                    existing_application = application_exists(
+                        name,
+                        realm
+                    )
+
+                    if existing_application:
+
+                        app_id, app_status = existing_application
+
+                        st.error(
+                            f"❌ Já existe uma aplicação para esse personagem nesse realm. "
+                            f"Status atual: {app_status}."
+                        )
+
+                        st.stop()
 
                     conn = sqlite3.connect(
                         "applications.db"
