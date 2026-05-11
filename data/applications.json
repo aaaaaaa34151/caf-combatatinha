@@ -64,5 +64,27 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "9c7dea55-4c25-4cf3-aa12-b6832087a0b4",
+    "timestamp": "2026-05-11T23:49:39.414616",
+    "character_name": "Murys",
+    "realm": "Area-52",
+    "class_name": "Monge",
+    "role": "Tank",
+    "offspec": "DPS",
+    "specs": [
+      "Mestre Cervejeiro",
+      "Andarilho do Vento"
+    ],
+    "ilvl": 283,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "ogrilozo",
+    "logs_link": "",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
