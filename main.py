@@ -717,7 +717,7 @@ elif pagina == "🔐 Painel Admin":
                     ),
                     "cores": st.column_config.TextColumn(
                         "Cores",
-                        width="large"
+                        width="medium"
                     ),
                     "status": st.column_config.TextColumn(
                         "Status",
