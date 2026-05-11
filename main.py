@@ -373,8 +373,8 @@ if pagina == "📝 Formulário de Aplicação":
                 )
 
                 realm = st.text_input(
-                    "Realm",
-                    value="Azralon"
+                    "Realm *",
+                    placeholder="Ex: Area-52"
                 )
 
             with col2:
@@ -491,6 +491,7 @@ if pagina == "📝 Formulário de Aplicação":
 
                 if (
                     not name
+                    or not realm
                     or not classe
                     or len(selected_specs) == 0
                     or not discord
