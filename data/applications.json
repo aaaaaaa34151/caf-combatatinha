@@ -42,5 +42,27 @@
     ],
     "motivation": "Sou brabo",
     "status": "Pendente"
+  },
+  {
+    "id": "5a6b2921-8043-41f4-ae00-68d5b8c87883",
+    "timestamp": "2026-05-11T23:49:30.179511",
+    "character_name": "Varandaoo-Sargereas",
+    "realm": "Sargereas",
+    "class_name": "Cavaleiro da Morte",
+    "role": "DPS",
+    "offspec": "Tank",
+    "specs": [
+      "Sangue",
+      "Profano"
+    ],
+    "ilvl": 281,
+    "experience": "3-6 anos",
+    "discord": "Aeschlus",
+    "logs_link": "https://raider.io/br/characters/us/sargeras/Varandaoo",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
