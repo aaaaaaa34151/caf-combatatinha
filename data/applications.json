@@ -21,5 +21,26 @@
     ],
     "motivation": "Sou novo no WoW, comecei na terceira temporada de TWW mas me dedico bastante ao End Game e tenho interesse na progressão.",
     "status": "Pendente"
+  },
+  {
+    "id": "955d9753-cd3b-41f9-b447-44d870d8b8c7",
+    "timestamp": "2026-05-11T23:47:11.353850",
+    "character_name": "Kotorizx",
+    "realm": "Area-52",
+    "class_name": "Caçador de Demônios",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Devourer"
+    ],
+    "ilvl": 279,
+    "experience": "Menos de 1 ano",
+    "discord": "Kotori_.",
+    "logs_link": "",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "Sou brabo",
+    "status": "Pendente"
   }
 ]
