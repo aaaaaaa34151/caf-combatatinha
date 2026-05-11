@@ -1,63 +1,70 @@
 import streamlit as st
-import sqlite3
 import json
 import pandas as pd
+import requests
+import base64
+import os
+import uuid
+import time
+
 from datetime import datetime
 
 # =====================================================
-# ====================== DATABASE =====================
+# ====================== CONFIG =======================
 # =====================================================
 
-def init_db():
+st.set_page_config(
+    page_title="Café com Batatinha",
+    page_icon="☕",
+    layout="wide"
+)
 
-    conn = sqlite3.connect("applications.db")
-    c = conn.cursor()
+# =====================================================
+# ====================== STYLE ========================
+# =====================================================
 
-    c.execute("""
-        CREATE TABLE IF NOT EXISTS applications (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            timestamp TEXT,
-            character_name TEXT,
-            realm TEXT,
-            class_name TEXT,
-            role TEXT,
-            offspec TEXT,
-            specs TEXT,
-            ilvl INTEGER,
-            experience TEXT,
-            discord TEXT,
-            logs_link TEXT,
-            cores TEXT,
-            motivation TEXT,
-            status TEXT DEFAULT 'Pendente'
-        )
-    """)
+st.markdown("""
+<style>
 
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 95vw;
+}
+
+div[data-testid="stExpander"] {
+    border-radius: 12px;
+    border: 1px solid #333333;
+}
+
+div[data-testid="stDataFrame"] {
+    border-radius: 12px;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+# =====================================================
+# =============== CONFIGURAÇÃO GITHUB =================
+# =====================================================
+
+def get_config_value(key, default=""):
     try:
-        c.execute("ALTER TABLE applications ADD COLUMN role TEXT")
-    except:
-        pass
+        return st.secrets.get(key, os.getenv(key, default))
+    except Exception:
+        return os.getenv(key, default)
 
-    try:
-        c.execute("ALTER TABLE applications ADD COLUMN offspec TEXT")
-    except:
-        pass
 
-    # Migração automática: aplicações antigas com Time Baine viram Time Sylvanas
-    c.execute("""
-        UPDATE applications
-        SET cores = REPLACE(
-            cores,
-            'Time Baine (Mítico Soft)',
-            'Time Sylvanas (Mítico Soft)'
-        )
-        WHERE cores LIKE '%Time Baine (Mítico Soft)%'
-    """)
+GITHUB_TOKEN = get_config_value("GITHUB_TOKEN")
+GITHUB_OWNER = get_config_value("GITHUB_OWNER")
+GITHUB_REPO = get_config_value("GITHUB_REPO")
+GITHUB_BRANCH = get_config_value("GITHUB_BRANCH", "main")
+GITHUB_DATA_PATH = get_config_value(
+    "GITHUB_DATA_PATH",
+    "data/applications.json"
+)
 
-    conn.commit()
-    conn.close()
-
-init_db()
+GITHUB_API_VERSION = "2022-11-28"
 
 # =====================================================
 # ====================== CLASSES ======================
@@ -262,22 +269,264 @@ Ideal para quem quer:
 }
 
 # =====================================================
-# ====================== FUNCTIONS ====================
+# ====================== GITHUB API ===================
 # =====================================================
+
+def github_is_configured():
+    return all([
+        GITHUB_TOKEN,
+        GITHUB_OWNER,
+        GITHUB_REPO,
+        GITHUB_BRANCH,
+        GITHUB_DATA_PATH
+    ])
+
+
+def github_headers():
+    return {
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": GITHUB_API_VERSION
+    }
+
+
+def github_file_url():
+    return (
+        f"https://api.github.com/repos/"
+        f"{GITHUB_OWNER}/{GITHUB_REPO}/contents/{GITHUB_DATA_PATH}"
+    )
+
+
+def normalize_core_name(core_name):
+
+    if core_name == "Time Baine (Mítico Soft)":
+        return "Time Sylvanas (Mítico Soft)"
+
+    return core_name
+
+
+def normalize_application(app):
+
+    app.setdefault("id", str(uuid.uuid4()))
+    app.setdefault("timestamp", datetime.now().isoformat())
+    app.setdefault("character_name", "")
+    app.setdefault("realm", "")
+    app.setdefault("class_name", "")
+    app.setdefault("role", "")
+    app.setdefault("offspec", "Não")
+    app.setdefault("specs", [])
+    app.setdefault("ilvl", 0)
+    app.setdefault("experience", "")
+    app.setdefault("discord", "")
+    app.setdefault("logs_link", "")
+    app.setdefault("cores", [])
+    app.setdefault("motivation", "")
+    app.setdefault("status", "Pendente")
+
+    app["cores"] = [
+        normalize_core_name(core)
+        for core in safe_list(app.get("cores", []))
+    ]
+
+    app["specs"] = safe_list(app.get("specs", []))
+
+    return app
+
+
+def load_applications_from_github():
+
+    if not github_is_configured():
+        return [], None, "GitHub não configurado."
+
+    try:
+
+        response = requests.get(
+            github_file_url(),
+            headers=github_headers(),
+            params={
+                "ref": GITHUB_BRANCH
+            },
+            timeout=20
+        )
+
+        if response.status_code == 404:
+            return [], None, None
+
+        if response.status_code != 200:
+            return [], None, response.text
+
+        data = response.json()
+
+        sha = data.get("sha")
+
+        encoded_content = data.get("content", "")
+
+        decoded_content = base64.b64decode(
+            encoded_content
+        ).decode("utf-8")
+
+        if decoded_content.strip() == "":
+            return [], sha, None
+
+        applications = json.loads(decoded_content)
+
+        if not isinstance(applications, list):
+            applications = []
+
+        applications = [
+            normalize_application(app)
+            for app in applications
+            if isinstance(app, dict)
+        ]
+
+        return applications, sha, None
+
+    except Exception as e:
+        return [], None, str(e)
+
+
+def save_applications_to_github(applications, sha=None, message="Atualizar aplicações"):
+
+    if not github_is_configured():
+        return False, "GitHub não configurado."
+
+    try:
+
+        applications = [
+            normalize_application(app)
+            for app in applications
+            if isinstance(app, dict)
+        ]
+
+        content_string = json.dumps(
+            applications,
+            ensure_ascii=False,
+            indent=2
+        )
+
+        encoded_content = base64.b64encode(
+            content_string.encode("utf-8")
+        ).decode("utf-8")
+
+        payload = {
+            "message": message,
+            "content": encoded_content,
+            "branch": GITHUB_BRANCH
+        }
+
+        if sha:
+            payload["sha"] = sha
+
+        response = requests.put(
+            github_file_url(),
+            headers=github_headers(),
+            json=payload,
+            timeout=20
+        )
+
+        if response.status_code in [200, 201]:
+            return True, None
+
+        return False, response.text
+
+    except Exception as e:
+        return False, str(e)
+
+
+def save_new_application(new_application):
+
+    for attempt in range(3):
+
+        applications, sha, error = load_applications_from_github()
+
+        if error:
+            return False, error
+
+        for app in applications:
+
+            same_character = (
+                str(app.get("character_name", "")).strip().lower()
+                == str(new_application.get("character_name", "")).strip().lower()
+            )
+
+            same_realm = (
+                str(app.get("realm", "")).strip().lower()
+                == str(new_application.get("realm", "")).strip().lower()
+            )
+
+            if same_character and same_realm:
+
+                status = app.get("status", "Pendente")
+
+                return (
+                    False,
+                    f"duplicate::{status}"
+                )
+
+        applications.append(
+            normalize_application(new_application)
+        )
+
+        ok, save_error = save_applications_to_github(
+            applications,
+            sha,
+            message=f"Nova aplicação: {new_application.get('character_name', '')}"
+        )
+
+        if ok:
+            return True, None
+
+        if "409" in str(save_error) or "sha" in str(save_error).lower():
+            time.sleep(1)
+            continue
+
+        return False, save_error
+
+    return False, "Conflito ao salvar no GitHub. Tente enviar novamente."
+
 
 def update_status(app_id, new_status):
 
-    conn = sqlite3.connect("applications.db")
-    c = conn.cursor()
+    for attempt in range(3):
 
-    c.execute(
-        "UPDATE applications SET status = ? WHERE id = ?",
-        (new_status, app_id)
-    )
+        applications, sha, error = load_applications_from_github()
 
-    conn.commit()
-    conn.close()
+        if error:
+            return False, error
 
+        found = False
+
+        for app in applications:
+
+            if str(app.get("id")) == str(app_id):
+                app["status"] = new_status
+                found = True
+                break
+
+        if not found:
+            return False, "Aplicação não encontrada."
+
+        ok, save_error = save_applications_to_github(
+            applications,
+            sha,
+            message=f"Atualizar status: {app_id} -> {new_status}"
+        )
+
+        if ok:
+            return True, None
+
+        if "409" in str(save_error) or "sha" in str(save_error).lower():
+            time.sleep(1)
+            continue
+
+        return False, save_error
+
+    return False, "Conflito ao atualizar status. Tente novamente."
+
+
+# =====================================================
+# ====================== HELPERS ======================
+# =====================================================
 
 def reset_specs():
 
@@ -294,68 +543,77 @@ def reset_specs():
 def safe_json_list(value):
 
     try:
-        return json.loads(value)
+
+        if isinstance(value, list):
+            return value
+
+        if isinstance(value, str):
+            return json.loads(value)
+
+        return []
+
     except:
         return []
 
 
-def application_exists(character_name, realm):
+def safe_list(value):
 
-    conn = sqlite3.connect("applications.db")
-    c = conn.cursor()
+    if isinstance(value, list):
+        return value
 
-    c.execute("""
-        SELECT id, status
-        FROM applications
-        WHERE LOWER(TRIM(character_name)) = LOWER(TRIM(?))
-        AND LOWER(TRIM(realm)) = LOWER(TRIM(?))
-        LIMIT 1
-    """, (
-        character_name,
-        realm
-    ))
+    if isinstance(value, str):
 
-    result = c.fetchone()
+        if value.strip() == "":
+            return []
 
-    conn.close()
+        try:
+            parsed = json.loads(value)
 
-    return result
+            if isinstance(parsed, list):
+                return parsed
+
+            return [str(parsed)]
+
+        except:
+            return [value]
+
+    return []
 
 
-# =====================================================
-# ====================== CONFIG =======================
-# =====================================================
+def applications_to_dataframe(applications):
 
-st.set_page_config(
-    page_title="Café com Batatinha",
-    page_icon="☕",
-    layout="wide"
-)
+    normalized_apps = [
+        normalize_application(app)
+        for app in applications
+    ]
 
-# =====================================================
-# ====================== STYLE ========================
-# =====================================================
+    df = pd.DataFrame(normalized_apps)
 
-st.markdown("""
-<style>
+    expected_columns = [
+        "id",
+        "timestamp",
+        "character_name",
+        "realm",
+        "class_name",
+        "role",
+        "offspec",
+        "specs",
+        "ilvl",
+        "experience",
+        "discord",
+        "logs_link",
+        "cores",
+        "motivation",
+        "status"
+    ]
 
-.block-container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    max-width: 95vw;
-}
+    for col in expected_columns:
 
-div[data-testid="stExpander"] {
-    border-radius: 12px;
-    border: 1px solid #333333;
-}
+        if col not in df.columns:
+            df[col] = ""
 
-div[data-testid="stDataFrame"] {
-    border-radius: 12px;
-}
+    return df[expected_columns]
 
-</style>
-""", unsafe_allow_html=True)
 
 # =====================================================
 # ====================== SESSION ======================
@@ -364,12 +622,31 @@ div[data-testid="stDataFrame"] {
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
+if "open_expander" not in st.session_state:
+    st.session_state.open_expander = None
+
 # =====================================================
 # ====================== HEADER =======================
 # =====================================================
 
 st.title("☕ CAFÉ COM BATATINHA")
 st.caption("Guilda • WoW Midnight")
+
+if not github_is_configured():
+
+    st.error(
+        "❌ GitHub não configurado. Configure os secrets do Streamlit antes de usar o app."
+    )
+
+    st.code("""
+GITHUB_TOKEN = "seu_token_github"
+GITHUB_OWNER = "seu_usuario_ou_org"
+GITHUB_REPO = "nome_do_repositorio"
+GITHUB_BRANCH = "main"
+GITHUB_DATA_PATH = "data/applications.json"
+""", language="toml")
+
+    st.stop()
 
 pagina = st.sidebar.selectbox(
     "Escolha a página",
@@ -538,69 +815,53 @@ if pagina == "📝 Formulário de Aplicação":
 
                 else:
 
-                    existing_application = application_exists(
-                        name,
-                        realm
-                    )
+                    new_application = {
+                        "id": str(uuid.uuid4()),
+                        "timestamp": datetime.now().isoformat(),
+                        "character_name": name.strip(),
+                        "realm": realm.strip(),
+                        "class_name": classe,
+                        "role": role,
+                        "offspec": offspec,
+                        "specs": selected_specs,
+                        "ilvl": int(ilvl),
+                        "experience": experience,
+                        "discord": discord.strip(),
+                        "logs_link": logs_link.strip(),
+                        "cores": selected_cores,
+                        "motivation": motivation.strip(),
+                        "status": "Pendente"
+                    }
 
-                    if existing_application:
+                    ok, error = save_new_application(new_application)
 
-                        app_id, app_status = existing_application
+                    if ok:
 
-                        st.error(
-                            f"❌ Já existe uma aplicação para esse personagem nesse realm. "
-                            f"Status atual: {app_status}."
+                        st.success(
+                            "✅ Aplicação enviada com sucesso!"
                         )
 
-                        st.stop()
+                        st.balloons()
 
-                    conn = sqlite3.connect(
-                        "applications.db"
-                    )
+                    else:
 
-                    c = conn.cursor()
+                        if str(error).startswith("duplicate::"):
 
-                    c.execute("""
-                        INSERT INTO applications (
-                            timestamp,
-                            character_name,
-                            realm,
-                            class_name,
-                            role,
-                            offspec,
-                            specs,
-                            ilvl,
-                            experience,
-                            discord,
-                            logs_link,
-                            cores,
-                            motivation
-                        )
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                    """, (
-                        datetime.now().isoformat(),
-                        name,
-                        realm,
-                        classe,
-                        role,
-                        offspec,
-                        json.dumps(selected_specs),
-                        ilvl,
-                        experience,
-                        discord,
-                        logs_link,
-                        json.dumps(selected_cores),
-                        motivation
-                    ))
+                            status_atual = str(error).replace(
+                                "duplicate::",
+                                ""
+                            )
 
-                    conn.commit()
-                    conn.close()
+                            st.error(
+                                f"❌ Já existe uma aplicação para esse personagem nesse realm. "
+                                f"Status atual: {status_atual}."
+                            )
 
-                    st.success(
-                        "✅ Aplicação enviada com sucesso!"
-                    )
+                        else:
 
-                    st.balloons()
+                            st.error(
+                                f"❌ Erro ao salvar no GitHub: {error}"
+                            )
 
 # =====================================================
 # ====================== ADMIN PAGE ===================
@@ -661,14 +922,17 @@ elif pagina == "🔐 Painel Admin":
                 st.session_state.logged_in = False
                 st.rerun()
 
-        conn = sqlite3.connect("applications.db")
+        applications, sha, load_error = load_applications_from_github()
 
-        df = pd.read_sql_query(
-            "SELECT * FROM applications ORDER BY timestamp DESC",
-            conn
-        )
+        if load_error:
 
-        conn.close()
+            st.error(
+                f"❌ Erro ao carregar aplicações do GitHub: {load_error}"
+            )
+
+            st.stop()
+
+        df = applications_to_dataframe(applications)
 
         if df.empty:
 
@@ -681,19 +945,19 @@ elif pagina == "🔐 Painel Admin":
             df_display = df.copy()
 
             df_display["timestamp"] = pd.to_datetime(
-                df_display["timestamp"]
+                df_display["timestamp"],
+                errors="coerce"
             ).dt.strftime("%d/%m/%Y %H:%M")
 
             df_display["specs"] = df_display["specs"].apply(
-                lambda x: ", ".join(safe_json_list(x))
-                if isinstance(x, str)
-                else ""
+                lambda x: ", ".join(safe_list(x))
             )
 
             df_display["cores"] = df_display["cores"].apply(
-                lambda x: ", ".join(safe_json_list(x))
-                if isinstance(x, str)
-                else ""
+                lambda x: ", ".join(
+                    normalize_core_name(core)
+                    for core in safe_list(x)
+                )
             )
 
             df_display["role"] = df_display["role"].fillna("Não informado")
@@ -784,11 +1048,12 @@ elif pagina == "🔐 Painel Admin":
             for _, row in df.iterrows():
 
                 specs = ", ".join(
-                    safe_json_list(row["specs"])
+                    safe_list(row["specs"])
                 )
 
                 cores = ", ".join(
-                    safe_json_list(row["cores"])
+                    normalize_core_name(core)
+                    for core in safe_list(row["cores"])
                 )
 
                 role = (
@@ -799,12 +1064,13 @@ elif pagina == "🔐 Painel Admin":
 
                 offspec = (
                     row["offspec"]
-                    if "offspec" in row
-                    and row["offspec"]
+                    if row["offspec"]
                     else "Não"
                 )
 
-                expander_key = f"exp_{row['id']}"
+                app_id = row["id"]
+
+                expander_key = f"exp_{app_id}"
 
                 with st.expander(
                     f"{row['character_name']} • "
@@ -887,52 +1153,61 @@ elif pagina == "🔐 Painel Admin":
 
                         if st.button(
                             "✅ Aprovar",
-                            key=f"approve_{row['id']}",
+                            key=f"approve_{app_id}",
                             width="stretch"
                         ):
 
                             st.session_state["open_expander"] = expander_key
 
-                            update_status(
-                                row["id"],
+                            ok, error = update_status(
+                                app_id,
                                 "Aprovado"
                             )
 
-                            st.rerun()
+                            if not ok:
+                                st.error(error)
+                            else:
+                                st.rerun()
 
                     with b2:
 
                         if st.button(
                             "❌ Rejeitar",
-                            key=f"reject_{row['id']}",
+                            key=f"reject_{app_id}",
                             width="stretch"
                         ):
 
                             st.session_state["open_expander"] = expander_key
 
-                            update_status(
-                                row["id"],
+                            ok, error = update_status(
+                                app_id,
                                 "Rejeitado"
                             )
 
-                            st.rerun()
+                            if not ok:
+                                st.error(error)
+                            else:
+                                st.rerun()
 
                     with b3:
 
                         if st.button(
                             "⏳ Pendente",
-                            key=f"pending_{row['id']}",
+                            key=f"pending_{app_id}",
                             width="stretch"
                         ):
 
                             st.session_state["open_expander"] = expander_key
 
-                            update_status(
-                                row["id"],
+                            ok, error = update_status(
+                                app_id,
                                 "Pendente"
                             )
 
-                            st.rerun()
+                            if not ok:
+                                st.error(error)
+                            else:
+                                st.rerun()
 
 # =====================================================
 # ====================== FOOTER =======================
