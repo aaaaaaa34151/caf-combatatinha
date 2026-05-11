@@ -283,21 +283,9 @@ def reset_specs():
 def safe_json_list(value):
 
     try:
-        if not value:
-            return []
-
         return json.loads(value)
-
     except:
         return []
-
-
-def safe_text(value, default="Não informado"):
-
-    if pd.isna(value) or value is None or value == "":
-        return default
-
-    return value
 
 
 # =====================================================
@@ -680,69 +668,10 @@ elif pagina == "🔐 Painel Admin":
 
             st.divider()
 
-            # =====================================================
-            # ================== TABELA ADMIN =====================
-            # =====================================================
-
             st.markdown("### 📄 Aplicações")
 
-            modo_tabela = st.radio(
-                "Visualização da tabela",
-                [
-                    "Compacta",
-                    "Completa"
-                ],
-                horizontal=True
-            )
-
-            if modo_tabela == "Compacta":
-
-                tabela_admin = df_display[
-                    [
-                        "timestamp",
-                        "character_name",
-                        "class_name",
-                        "role",
-                        "ilvl",
-                        "status"
-                    ]
-                ]
-
-                st.dataframe(
-                    tabela_admin,
-                    width="stretch",
-                    hide_index=True,
-                    column_config={
-                        "timestamp": st.column_config.TextColumn(
-                            "Data",
-                            width=120
-                        ),
-                        "character_name": st.column_config.TextColumn(
-                            "Personagem",
-                            width=160
-                        ),
-                        "class_name": st.column_config.TextColumn(
-                            "Classe",
-                            width=170
-                        ),
-                        "role": st.column_config.TextColumn(
-                            "Função",
-                            width=90
-                        ),
-                        "ilvl": st.column_config.NumberColumn(
-                            "Ilvl",
-                            width=70
-                        ),
-                        "status": st.column_config.TextColumn(
-                            "Status",
-                            width=110
-                        ),
-                    }
-                )
-
-            else:
-
-                tabela_admin = df_display[
+            st.dataframe(
+                df_display[
                     [
                         "timestamp",
                         "character_name",
@@ -754,51 +683,48 @@ elif pagina == "🔐 Painel Admin":
                         "cores",
                         "status"
                     ]
-                ]
-
-                st.dataframe(
-                    tabela_admin,
-                    width="stretch",
-                    hide_index=True,
-                    column_config={
-                        "timestamp": st.column_config.TextColumn(
-                            "Data",
-                            width=115
-                        ),
-                        "character_name": st.column_config.TextColumn(
-                            "Personagem",
-                            width=145
-                        ),
-                        "class_name": st.column_config.TextColumn(
-                            "Classe",
-                            width=160
-                        ),
-                        "specs": st.column_config.TextColumn(
-                            "Spec",
-                            width=170
-                        ),
-                        "role": st.column_config.TextColumn(
-                            "Função",
-                            width=85
-                        ),
-                        "offspec": st.column_config.TextColumn(
-                            "Off",
-                            width=75
-                        ),
-                        "ilvl": st.column_config.NumberColumn(
-                            "Ilvl",
-                            width=65
-                        ),
-                        "cores": st.column_config.TextColumn(
-                            "Cores",
-                            width=210
-                        ),
-                        "status": st.column_config.TextColumn(
-                            "Status",
-                            width=105
-                        ),
-                    }
-                )
+                ],
+                width="stretch",
+                hide_index=True,
+                column_config={
+                    "timestamp": st.column_config.TextColumn(
+                        "Data",
+                        width="medium"
+                    ),
+                    "character_name": st.column_config.TextColumn(
+                        "Personagem",
+                        width="medium"
+                    ),
+                    "class_name": st.column_config.TextColumn(
+                        "Classe",
+                        width="medium"
+                    ),
+                    "specs": st.column_config.TextColumn(
+                        "Especialização",
+                        width="medium"
+                    ),
+                    "role": st.column_config.TextColumn(
+                        "Função",
+                        width="small"
+                    ),
+                    "offspec": st.column_config.TextColumn(
+                        "Off Spec",
+                        width="small"
+                    ),
+                    "ilvl": st.column_config.NumberColumn(
+                        "Ilvl",
+                        width="small"
+                    ),
+                    "cores": st.column_config.TextColumn(
+                        "Cores",
+                        width="large"
+                    ),
+                    "status": st.column_config.TextColumn(
+                        "Status",
+                        width="medium"
+                    ),
+                }
+            )
 
             st.divider()
 
@@ -814,14 +740,17 @@ elif pagina == "🔐 Painel Admin":
                     safe_json_list(row["cores"])
                 )
 
-                role = safe_text(
-                    row["role"],
-                    "Não informado"
+                role = (
+                    row["role"]
+                    if row["role"]
+                    else "Não informado"
                 )
 
-                offspec = safe_text(
-                    row["offspec"],
-                    "Não"
+                offspec = (
+                    row["offspec"]
+                    if "offspec" in row
+                    and row["offspec"]
+                    else "Não"
                 )
 
                 expander_key = f"exp_{row['id']}"
