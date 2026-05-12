@@ -622,5 +622,26 @@
     ],
     "motivation": "Atualmente é \"alt\" do Canabinoide, portanto esse não está na guild. Jogo de Pala Retri desde 2009, então essa classe é a minha principal há bastante tempo. Claro que o DH Devorador é o queridinho, e o teto de performance do Retri é bem menor que o DH, mas apesar disso, é a classe que para mim é medular, então não preciso sequer pensar para poder desempenhar bem com ela. Conversei com o Tioppo e ele me sugeriu dar apply no core com esse boneco também, e deixo a decisão do que for melhor para o core à critério da liderança.",
     "status": "Pendente"
+  },
+  {
+    "id": "764a5df4-800f-4f4c-805e-15ac699ee40c",
+    "timestamp": "2026-05-12T14:15:06.100856",
+    "character_name": "Haiyore",
+    "realm": "Illidan",
+    "class_name": "Bruxo",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Demonologia"
+    ],
+    "ilvl": 282,
+    "experience": "Menos de 1 ano",
+    "discord": "haiyore",
+    "logs_link": "3200",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "Começei wow no inicio do midnight, mas possuo experiência em outros jogos competitivos.",
+    "status": "Pendente"
   }
 ]
