@@ -771,5 +771,27 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "a40b61b4-829a-40fb-a45a-672db38c0a87",
+    "timestamp": "2026-05-12T21:11:26.113770",
+    "character_name": "Rido",
+    "realm": "Arthas",
+    "class_name": "Paladino",
+    "role": "DPS",
+    "offspec": "Tank",
+    "specs": [
+      "Retribuição",
+      "Proteção"
+    ],
+    "ilvl": 280,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "__rido__",
+    "logs_link": "https://worldofwarcraft.blizzard.com/en-us/character/us/arthas/Rido",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
