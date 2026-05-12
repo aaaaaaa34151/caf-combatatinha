@@ -664,5 +664,27 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "03a21813-2545-4320-937f-d1ff2a191d3c",
+    "timestamp": "2026-05-12T15:51:19.546498",
+    "character_name": "Behorn",
+    "realm": "azralom",
+    "class_name": "Guerreiro",
+    "role": "Tank",
+    "offspec": "DPS",
+    "specs": [
+      "Fúria",
+      "Proteção"
+    ],
+    "ilvl": 279,
+    "experience": "Menos de 1 ano",
+    "discord": "Angbandir",
+    "logs_link": "https://raider.io/characters/us/azralon/Behorn and https://raider.io/characters/us/azralon/Angbandir",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "Jogo wow desde o inicio da expansão passada, comecei a fazer raid mais nessas season, estou no softcore do klebrimbor, como dps, porém quero tentar tanke subir para core mitico",
+    "status": "Pendente"
   }
 ]
