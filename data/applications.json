@@ -686,5 +686,27 @@
     ],
     "motivation": "Jogo wow desde o inicio da expansão passada, comecei a fazer raid mais nessas season, estou no softcore do klebrimbor, como dps, porém quero tentar tanke subir para core mitico",
     "status": "Pendente"
+  },
+  {
+    "id": "8a8b5473-33a4-4017-99e2-10e2de280f6e",
+    "timestamp": "2026-05-12T15:53:42.640381",
+    "character_name": "Eniprisa",
+    "realm": "Stormrage",
+    "class_name": "Druida",
+    "role": "Tank",
+    "offspec": "DPS",
+    "specs": [
+      "Feral",
+      "Guardião"
+    ],
+    "ilvl": 272,
+    "experience": "1-3 anos",
+    "discord": "Sim",
+    "logs_link": "Sim",
+    "cores": [
+      "Time Dragonetinhos (Heroico)"
+    ],
+    "motivation": "Jogo desde pandaria.  Procuro um core que não seja na segunda nem no domingo.",
+    "status": "Pendente"
   }
 ]
