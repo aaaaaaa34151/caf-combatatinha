@@ -580,5 +580,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "e80cf96f-3701-459d-9736-624589bcbba1",
+    "timestamp": "2026-05-12T12:40:02.484577",
+    "character_name": "Canabinoide",
+    "realm": "Illidan",
+    "class_name": "Caçador de Demônios",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Devourer"
+    ],
+    "ilvl": 281,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "brito2767",
+    "logs_link": "https://raider.io/characters/us/illidan/Canabinoide",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "Esse personagem virou meu Main recentemente, e é o que se encontra na guild. Comecei com DH no Legion, mas jogo de Devorador há cerca de 1 mês, pois no grupo com o qual fazia raide já havia muitos Paladinos (minha classe principal desde 2009). Bem equipado, atributos muito bem distribuidos, ainda sem um dos 2 trinkets BIS.",
+    "status": "Pendente"
   }
 ]
