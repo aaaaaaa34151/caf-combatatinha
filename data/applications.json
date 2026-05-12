@@ -275,5 +275,27 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "424e6a95-2b8e-49d9-824e-0ca4f13e663e",
+    "timestamp": "2026-05-12T00:06:16.040856",
+    "character_name": "Mälaky",
+    "realm": "Azralon",
+    "class_name": "Cavaleiro da Morte",
+    "role": "DPS",
+    "offspec": "Tank",
+    "specs": [
+      "Sangue",
+      "Profano"
+    ],
+    "ilvl": 281,
+    "experience": "Menos de 1 ano",
+    "discord": "Malaki",
+    "logs_link": "",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
