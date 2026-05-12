@@ -643,5 +643,26 @@
     ],
     "motivation": "Começei wow no inicio do midnight, mas possuo experiência em outros jogos competitivos.",
     "status": "Pendente"
+  },
+  {
+    "id": "b2d73669-0f66-41fd-b877-9229f1084f16",
+    "timestamp": "2026-05-12T14:20:15.219617",
+    "character_name": "xinguilau",
+    "realm": "azralon",
+    "class_name": "Monge",
+    "role": "Healer",
+    "offspec": "DPS",
+    "specs": [
+      "Tecelão da Névoa"
+    ],
+    "ilvl": 281,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "renato xinguilau",
+    "logs_link": "",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
