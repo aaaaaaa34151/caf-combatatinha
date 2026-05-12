@@ -814,5 +814,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "e9a8bf30-1c6a-4afc-8868-fe23f0447fbf",
+    "timestamp": "2026-05-12T22:23:32.801223",
+    "character_name": "Desharian",
+    "realm": "Stormrage",
+    "class_name": "Druida",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Equilíbrio"
+    ],
+    "ilvl": 283,
+    "experience": "Menos de 1 ano",
+    "discord": "Desharian",
+    "logs_link": "https://raider.io/characters/us/stormrage/Desharian",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "Jogo o jogo a um tempinho já, mas sempre de maneira casual. Agora estou interessado em tentar conteúdo end game.",
+    "status": "Pendente"
   }
 ]
