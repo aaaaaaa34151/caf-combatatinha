@@ -793,5 +793,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "5312e446-cde7-435e-8d49-9d829a86f00d",
+    "timestamp": "2026-05-12T21:24:58.348868",
+    "character_name": "Tomboombadil",
+    "realm": "Azralon",
+    "class_name": "Mago",
+    "role": "DPS",
+    "offspec": "Tank",
+    "specs": [
+      "Gélido"
+    ],
+    "ilvl": 281,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "mazin_1998",
+    "logs_link": "https://raider.io/characters/us/azralon/Tomboombadil",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
