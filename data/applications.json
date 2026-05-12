@@ -297,5 +297,27 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "b8f9e78f-2e16-4ea3-b7a4-2c40f2f673c3",
+    "timestamp": "2026-05-12T00:08:46.275805",
+    "character_name": "Hankage",
+    "realm": "Area-52",
+    "class_name": "Ladino",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Assassinato",
+      "Subterfúgio"
+    ],
+    "ilvl": 283,
+    "experience": "Menos de 1 ano",
+    "discord": "andre7689",
+    "logs_link": "https://raider.io/characters/us/area-52/Hankage",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "Comecei a jogar wow em dragonflight mas nunca serio, essa season comecei jogando com amigos (Duzao e Varanda, o xexelos) que me motivou a começar a jogar serio, eles falaram que tinha vaga no core mitico deles o que fez eu ficar animado pois estou realmente gostando do jogo e gostaria de conquistar a raid no mito tbm.",
+    "status": "Pendente"
   }
 ]
