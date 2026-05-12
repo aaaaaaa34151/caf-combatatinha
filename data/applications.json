@@ -729,5 +729,26 @@
     ],
     "motivation": "Quero focar HC apenas e usar as M+ para gear.",
     "status": "Pendente"
+  },
+  {
+    "id": "7e60c56a-eff7-44ce-8f6b-7c708b2f557a",
+    "timestamp": "2026-05-12T18:58:17.853702",
+    "character_name": "Bolvär",
+    "realm": "(US) Stormrage",
+    "class_name": "Paladino",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Retribuição"
+    ],
+    "ilvl": 283,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "bolvar777",
+    "logs_link": "https://raider.io/characters/us/stormrage/Bolv%C3%A4r",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
