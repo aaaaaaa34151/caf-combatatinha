@@ -254,5 +254,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "413acf35-fc41-48e9-82ce-18401d7eb500",
+    "timestamp": "2026-05-12T00:06:02.106988",
+    "character_name": "Fë",
+    "realm": "Stormrage",
+    "class_name": "Paladino",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Retribuição"
+    ],
+    "ilvl": 278,
+    "experience": "Menos de 1 ano",
+    "discord": "feunando.",
+    "logs_link": "https://www.warcraftlogs.com/character/id/108867755",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
