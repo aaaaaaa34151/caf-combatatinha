@@ -537,5 +537,27 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "65a2a119-0576-48d8-9131-bb6c9525227a",
+    "timestamp": "2026-05-12T02:55:55.396961",
+    "character_name": "Zultrular",
+    "realm": "Azralon",
+    "class_name": "Xamã",
+    "role": "Healer",
+    "offspec": "DPS",
+    "specs": [
+      "Elemental",
+      "Restauração"
+    ],
+    "ilvl": 280,
+    "experience": "Menos de 1 ano",
+    "discord": "LimmeBell",
+    "logs_link": "https://raider.io/br/characters/us/azralon/Zultrular",
+    "cores": [
+      "Time Café com Açúcar (Heroico)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
