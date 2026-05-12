@@ -835,5 +835,26 @@
     ],
     "motivation": "Jogo o jogo a um tempinho já, mas sempre de maneira casual. Agora estou interessado em tentar conteúdo end game.",
     "status": "Pendente"
+  },
+  {
+    "id": "a6f97a87-c60a-494d-811f-58af22a24603",
+    "timestamp": "2026-05-12T23:12:12.804967",
+    "character_name": "Zallmo",
+    "realm": "Goldrinn",
+    "class_name": "Guerreiro",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Fúria"
+    ],
+    "ilvl": 280,
+    "experience": "3-6 anos",
+    "discord": "jkarkache",
+    "logs_link": "https://raider.io/characters/us/goldrinn/Zallmo",
+    "cores": [
+      "Time Café com Açúcar (Heroico)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
