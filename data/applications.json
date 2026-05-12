@@ -559,5 +559,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "05a3a6ff-1606-46a2-a6cd-1ad1b1c60452",
+    "timestamp": "2026-05-12T10:31:35.869651",
+    "character_name": "Ivankovz",
+    "realm": "Azralon",
+    "class_name": "Cavaleiro da Morte",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Profano"
+    ],
+    "ilvl": 284,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "Chun",
+    "logs_link": "https://raider.io/characters/us/azralon/Ivankovz",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
