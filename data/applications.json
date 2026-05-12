@@ -750,5 +750,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "f6663cf2-a981-43fc-b04f-97a8935a78b4",
+    "timestamp": "2026-05-12T19:23:43.181811",
+    "character_name": "Panditoo",
+    "realm": "Stormrage",
+    "class_name": "Caçador",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Domínio das Feras"
+    ],
+    "ilvl": 283,
+    "experience": "3-6 anos",
+    "discord": "Wiimarques",
+    "logs_link": "https://raider.io/characters/us/stormrage/Panditoo",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
