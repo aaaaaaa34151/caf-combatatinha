@@ -382,5 +382,26 @@
     ],
     "motivation": "Jogo WoW desde Warlords of Draenor. Raid é meu tipo de conteúdo favorito. Sou assíduo e pontual.",
     "status": "Pendente"
+  },
+  {
+    "id": "5a67ec66-3c63-4c88-aacf-a1c7a5c1238f",
+    "timestamp": "2026-05-12T00:27:00.697298",
+    "character_name": "Resenhudinho",
+    "realm": "Azralon",
+    "class_name": "Caçador",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Sobrevivência"
+    ],
+    "ilvl": 280,
+    "experience": "Menos de 1 ano",
+    "discord": "arbyvildred",
+    "logs_link": "https://raider.io/characters/us/azralon/Resenhudinho",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "Gosto de progressão e procuro uma guild pra crescer junto.",
+    "status": "Pendente"
   }
 ]
