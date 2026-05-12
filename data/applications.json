@@ -424,5 +424,27 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "1f2dfb5d-c7f1-4790-b77d-90a611add122",
+    "timestamp": "2026-05-12T00:41:13.076610",
+    "character_name": "Lipi",
+    "realm": "Stormrage",
+    "class_name": "Mago",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Gélido"
+    ],
+    "ilvl": 283,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "lippe18241",
+    "logs_link": "https://raider.io/characters/us/stormrage/Lipi",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)",
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "Procuro core de progressão mítico atualmente estou 9/9H e 3/9M.",
+    "status": "Pendente"
   }
 ]
