@@ -708,5 +708,26 @@
     ],
     "motivation": "Jogo desde pandaria.  Procuro um core que não seja na segunda nem no domingo.",
     "status": "Pendente"
+  },
+  {
+    "id": "ac3ce82a-10de-4ad4-a9b3-6d396ce9a9e3",
+    "timestamp": "2026-05-12T16:15:22.665666",
+    "character_name": "Lacradora",
+    "realm": "Azralon",
+    "class_name": "Paladino",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Retribuição"
+    ],
+    "ilvl": 275,
+    "experience": "Menos de 1 ano",
+    "discord": "Allanzoka",
+    "logs_link": "Sla o que é isso kkk",
+    "cores": [
+      "Time Dragonetinhos (Heroico)"
+    ],
+    "motivation": "Quero focar HC apenas e usar as M+ para gear.",
+    "status": "Pendente"
   }
 ]
