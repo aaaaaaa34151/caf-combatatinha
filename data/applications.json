@@ -340,5 +340,26 @@
     ],
     "motivation": "Ja faço parte do café com açúcar. To apenas oficializando.",
     "status": "Pendente"
+  },
+  {
+    "id": "76f6a1a4-2048-4687-9695-bfea4049e450",
+    "timestamp": "2026-05-12T00:18:22.079872",
+    "character_name": "Tioppo",
+    "realm": "Stormrage",
+    "class_name": "Paladino",
+    "role": "Healer",
+    "offspec": "Não",
+    "specs": [
+      "Sagrado"
+    ],
+    "ilvl": 284,
+    "experience": "1-3 anos",
+    "discord": "thales.piotto",
+    "logs_link": "https://raider.io/characters/us/stormrage/Tioppo",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
