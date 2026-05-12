@@ -601,5 +601,26 @@
     ],
     "motivation": "Esse personagem virou meu Main recentemente, e é o que se encontra na guild. Comecei com DH no Legion, mas jogo de Devorador há cerca de 1 mês, pois no grupo com o qual fazia raide já havia muitos Paladinos (minha classe principal desde 2009). Bem equipado, atributos muito bem distribuidos, ainda sem um dos 2 trinkets BIS.",
     "status": "Pendente"
+  },
+  {
+    "id": "060a2f11-9ec4-4e64-8644-bc116652ffb6",
+    "timestamp": "2026-05-12T12:47:09.350031",
+    "character_name": "Brïto",
+    "realm": "Illidan",
+    "class_name": "Paladino",
+    "role": "DPS",
+    "offspec": "Tank",
+    "specs": [
+      "Retribuição"
+    ],
+    "ilvl": 280,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "brito2767",
+    "logs_link": "https://raider.io/characters/us/illidan/Br%C3%AFto",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "Atualmente é \"alt\" do Canabinoide, portanto esse não está na guild. Jogo de Pala Retri desde 2009, então essa classe é a minha principal há bastante tempo. Claro que o DH Devorador é o queridinho, e o teto de performance do Retri é bem menor que o DH, mas apesar disso, é a classe que para mim é medular, então não preciso sequer pensar para poder desempenhar bem com ela. Conversei com o Tioppo e ele me sugeriu dar apply no core com esse boneco também, e deixo a decisão do que for melhor para o core à critério da liderança.",
+    "status": "Pendente"
   }
 ]
