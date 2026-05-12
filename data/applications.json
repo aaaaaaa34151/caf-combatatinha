@@ -492,5 +492,28 @@
     ],
     "motivation": "Warrior teimoso \nposso dar call , tenho off spec",
     "status": "Pendente"
+  },
+  {
+    "id": "17509726-8ea5-44df-8ee4-fc4f943e5912",
+    "timestamp": "2026-05-12T01:13:03.238255",
+    "character_name": "Loduro",
+    "realm": "Azralon",
+    "class_name": "Conjurante",
+    "role": "DPS",
+    "offspec": "Healer",
+    "specs": [
+      "Aprimoramento",
+      "Devastação",
+      "Preservação"
+    ],
+    "ilvl": 275,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "Verdugow",
+    "logs_link": "",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
