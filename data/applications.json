@@ -469,5 +469,28 @@
     ],
     "motivation": "Comecei a jogar nas últimas semanas de TWW e  me apaixonei pelo jogo. A experiência de tentar (e finalmente conseguir) a mount do Dimensus depois de muito esforço (  e sofrimento PUG) foi o momento em que percebi que WoW era  o meu jogo. Completei Torre e Fenda no heróico e sigo muito motivado a evoluir. Procuro agora uma oportunidade para aprender, contribuir e raidar no mítico com um grupo fixo e comprometido.",
     "status": "Pendente"
+  },
+  {
+    "id": "cc62ef97-af41-4b84-9398-da37cce73351",
+    "timestamp": "2026-05-12T00:57:29.289672",
+    "character_name": "Khourag",
+    "realm": "Azralon",
+    "class_name": "Guerreiro",
+    "role": "DPS",
+    "offspec": "Tank",
+    "specs": [
+      "Armas",
+      "Fúria",
+      "Proteção"
+    ],
+    "ilvl": 282,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "Khurag",
+    "logs_link": "https://br.warcraftlogs.com/character/us/azralon/khourag?zone=47",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "Warrior teimoso \nposso dar call , tenho off spec",
+    "status": "Pendente"
   }
 ]
