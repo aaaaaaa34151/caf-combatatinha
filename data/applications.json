@@ -403,5 +403,26 @@
     ],
     "motivation": "Gosto de progressão e procuro uma guild pra crescer junto.",
     "status": "Pendente"
+  },
+  {
+    "id": "fa7cf11f-f8ad-4dff-afc2-ab621a80daad",
+    "timestamp": "2026-05-12T00:35:34.740739",
+    "character_name": "Yokubô",
+    "realm": "Zul'jin",
+    "class_name": "Bruxo",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Demonologia"
+    ],
+    "ilvl": 283,
+    "experience": "1-3 anos",
+    "discord": "guiiiii",
+    "logs_link": "https://raider.io/characters/us/zuljin/Yokub%C3%B4",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
