@@ -361,5 +361,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "9d1dd2e9-0051-4311-aeeb-b74511f9be8c",
+    "timestamp": "2026-05-12T00:20:57.353525",
+    "character_name": "Tylo",
+    "realm": "Azralon",
+    "class_name": "Bruxo",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Destruição"
+    ],
+    "ilvl": 282,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "atilasilvestre",
+    "logs_link": "",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "Jogo WoW desde Warlords of Draenor. Raid é meu tipo de conteúdo favorito. Sou assíduo e pontual.",
+    "status": "Pendente"
   }
 ]
