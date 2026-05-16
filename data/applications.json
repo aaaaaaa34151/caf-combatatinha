@@ -1004,5 +1004,28 @@
     ],
     "motivation": "Jogo WOW desde Shadowlands. Gosto muito de fazer progressão de pedras M+ e estudo as raids, apesar de ainda não ter conseguido grupo para fazer. Sou pontual, porém trabalho com plantões e pode ser que coincidam com os dias de jogos (farei de tudo para não coincidir). Espero conseguir completar as raids dessa expansão ^-^",
     "status": "Pendente"
+  },
+  {
+    "id": "60002ee5-5195-4bf2-a5f6-296bb7d8da21",
+    "timestamp": "2026-05-16T18:05:35.702374",
+    "character_name": "Rowhan",
+    "realm": "Azralon",
+    "class_name": "Cavaleiro da Morte",
+    "role": "DPS",
+    "offspec": "Tank",
+    "specs": [
+      "Sangue",
+      "Gelo",
+      "Profano"
+    ],
+    "ilvl": 283,
+    "experience": "Menos de 1 ano",
+    "discord": "rones4475",
+    "logs_link": "https://raider.io/characters/us/azralon/Rowhan",
+    "cores": [
+      "Time Café com Açúcar (Heroico)"
+    ],
+    "motivation": "Jogo wow desde o final de legion, minha maior experiencia é em mítica + mas sempre quis fazer raides só não tinha grupo fechado, gosto de fazer progressão e sou extremamente focado em aprender mecânicas e melhorar minha gameplay. Espero encontrar um grupo tranquilo para fazermos todas as raides dessa expansão.",
+    "status": "Pendente"
   }
 ]
