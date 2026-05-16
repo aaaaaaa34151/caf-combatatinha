@@ -962,5 +962,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "2d97f013-fc50-4ef7-a50c-6555d1a20b0b",
+    "timestamp": "2026-05-16T18:02:48.117424",
+    "character_name": "Hyouma",
+    "realm": "Azralon",
+    "class_name": "Bruxo",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Demonologia"
+    ],
+    "ilvl": 282,
+    "experience": "Menos de 1 ano",
+    "discord": "opsicologodogrupo",
+    "logs_link": "https://raider.io/characters/us/azralon/Hyouma",
+    "cores": [
+      "Time Café com Açúcar (Heroico)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
