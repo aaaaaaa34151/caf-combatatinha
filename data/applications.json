@@ -983,5 +983,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "2707b0ec-124f-4fc4-987a-c7ca7e468c8f",
+    "timestamp": "2026-05-16T18:05:19.868953",
+    "character_name": "Aelliyn",
+    "realm": "Azralon",
+    "class_name": "Caçador",
+    "role": "DPS",
+    "offspec": "DPS",
+    "specs": [
+      "Precisão"
+    ],
+    "ilvl": 280,
+    "experience": "Menos de 1 ano",
+    "discord": "Merlliyn",
+    "logs_link": "https://raider.io/characters/us/azralon/Aelliyn",
+    "cores": [
+      "Time Café com Açúcar (Heroico)"
+    ],
+    "motivation": "Jogo WOW desde Shadowlands. Gosto muito de fazer progressão de pedras M+ e estudo as raids, apesar de ainda não ter conseguido grupo para fazer. Sou pontual, porém trabalho com plantões e pode ser que coincidam com os dias de jogos (farei de tudo para não coincidir). Espero conseguir completar as raids dessa expansão ^-^",
+    "status": "Pendente"
   }
 ]
