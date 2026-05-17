@@ -1048,5 +1048,27 @@
     ],
     "motivation": "Jogo wow dês do Burning crusader, porém sempre no ritmo jogo um tempo e paro (inclusive skipei umas 2 expansões como DF e SL), fazia raids antigamente mas meu foco sempre foi PvP, agora em MN comecei a fazer DG míticas etc, não saco nada das raids atuais mas tô aprendendo, de tiver algum grupo que não tenha que ter tanto compromisso com horários mais flexíveis  tô dentro.",
     "status": "Pendente"
+  },
+  {
+    "id": "91599a45-8c77-4a03-93ad-2c2983f79ec9",
+    "timestamp": "2026-05-17T02:57:43.853429",
+    "character_name": "Mugiwaradh",
+    "realm": "stormerage",
+    "class_name": "Caçador de Demônios",
+    "role": "Tank",
+    "offspec": "Não",
+    "specs": [
+      "Vingança"
+    ],
+    "ilvl": 261,
+    "experience": "Menos de 1 ano",
+    "discord": "alvaro8075",
+    "logs_link": "https://raider.io/characters/us/stormrage/Mugiwaradh",
+    "cores": [
+      "Time Dragonetinhos (Heroico)",
+      "Time Café com Açúcar (Heroico)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
