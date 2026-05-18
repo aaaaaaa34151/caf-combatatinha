@@ -1070,5 +1070,27 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "884b766d-cc68-4b1b-8cdd-728473c6ed84",
+    "timestamp": "2026-05-18T21:19:05.757324",
+    "character_name": "Móchas",
+    "realm": "Stormrage",
+    "class_name": "Mago",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Arcano",
+      "Gélido"
+    ],
+    "ilvl": 285,
+    "experience": "3-6 anos",
+    "discord": "mochas2655",
+    "logs_link": "",
+    "cores": [
+      "Time Café com Açúcar (Heroico)"
+    ],
+    "motivation": "Já sou do Core.",
+    "status": "Pendente"
   }
 ]
