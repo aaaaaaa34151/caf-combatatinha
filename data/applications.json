@@ -1155,5 +1155,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "7a62470d-be24-43b3-8d59-ad7307904713",
+    "timestamp": "2026-05-19T21:42:47.939836",
+    "character_name": "Kahuna",
+    "realm": "Illidan",
+    "class_name": "Xamã",
+    "role": "Healer",
+    "offspec": "Não",
+    "specs": [
+      "Restauração"
+    ],
+    "ilvl": 285,
+    "experience": "3-6 anos",
+    "discord": "vma_10",
+    "logs_link": "http://raider.io/characters/us/illidan/Kahuna",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "Jogo wow desde de legion, tenho experiencia em raid mitica apenas no pug tenho todas as AOTC desde DF season 2 em diante, gosto de progressão e jogar em grupo sempre aberto para ouvir e absorver qualquer critica.",
+    "status": "Pendente"
   }
 ]
