@@ -1113,5 +1113,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "2296b9e6-6b53-4309-8b88-38d7b9a1f11d",
+    "timestamp": "2026-05-19T17:24:36.559321",
+    "character_name": "Jowcast",
+    "realm": "Stormrage",
+    "class_name": "Caçador de Demônios",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Devourer"
+    ],
+    "ilvl": 284,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "Jow4768",
+    "logs_link": "https://raider.io/characters/us/stormrage/Jowcast?utm_source=addon",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "Jogo WoW desde WoD, tenho experiencia em raids miticas, sou pontual e procuro uma guilda para jogar em equipe, tenho outras classes que posso raidar também, Dk Unholy, Druida Tank",
+    "status": "Pendente"
   }
 ]
