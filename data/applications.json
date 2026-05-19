@@ -1134,5 +1134,26 @@
     ],
     "motivation": "Jogo WoW desde WoD, tenho experiencia em raids miticas, sou pontual e procuro uma guilda para jogar em equipe, tenho outras classes que posso raidar também, Dk Unholy, Druida Tank",
     "status": "Pendente"
+  },
+  {
+    "id": "e36d5c53-2333-4f68-9641-f2b961d65b79",
+    "timestamp": "2026-05-19T20:13:18.758702",
+    "character_name": "Wiedzmin",
+    "realm": "Azralon",
+    "class_name": "Paladino",
+    "role": "Tank",
+    "offspec": "DPS",
+    "specs": [
+      "Proteção"
+    ],
+    "ilvl": 287,
+    "experience": "3-6 anos",
+    "discord": "Sim",
+    "logs_link": "3183",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
