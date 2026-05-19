@@ -1092,5 +1092,26 @@
     ],
     "motivation": "Já sou do Core.",
     "status": "Pendente"
+  },
+  {
+    "id": "16a99627-d7fc-4757-99ba-3bc1156de71f",
+    "timestamp": "2026-05-19T17:11:52.635229",
+    "character_name": "Invokesensei",
+    "realm": "Illidan",
+    "class_name": "Mago",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Gélido"
+    ],
+    "ilvl": 285,
+    "experience": "1-3 anos",
+    "discord": "https://aplicarcorecafecombatatinha.streamlit.app/",
+    "logs_link": "https://raider.io/characters/us/illidan/Invokesensei",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
