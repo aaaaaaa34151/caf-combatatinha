@@ -1197,5 +1197,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "48842be3-ca09-4322-b6ca-51d3c1dabae3",
+    "timestamp": "2026-05-20T02:54:48.355651",
+    "character_name": "Astalich",
+    "realm": "Azralon",
+    "class_name": "Bruxo",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Demonologia"
+    ],
+    "ilvl": 285,
+    "experience": "Menos de 1 ano",
+    "discord": "arbyvildred",
+    "logs_link": "https://raider.io/characters/us/azralon/Astalich",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "Sou pontual e gosto de progressão, sou competitivo também.",
+    "status": "Pendente"
   }
 ]
