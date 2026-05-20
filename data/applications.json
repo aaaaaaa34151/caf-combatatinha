@@ -1218,5 +1218,26 @@
     ],
     "motivation": "Sou pontual e gosto de progressão, sou competitivo também.",
     "status": "Pendente"
+  },
+  {
+    "id": "62943edb-7def-4979-89c9-cf0d796db1a8",
+    "timestamp": "2026-05-20T21:27:36.431591",
+    "character_name": "Dkzero",
+    "realm": "azralon",
+    "class_name": "Cavaleiro da Morte",
+    "role": "DPS",
+    "offspec": "Tank",
+    "specs": [
+      "Profano"
+    ],
+    "ilvl": 276,
+    "experience": "1-3 anos",
+    "discord": "Pira",
+    "logs_link": "",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
