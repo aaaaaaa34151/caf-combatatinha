@@ -1264,5 +1264,26 @@
     ],
     "motivation": "Jogo wow desde  Cataclysm - Pandaria, entretanto fiquei sem jogar Legion e BFA. Tenho experiencia em raid por mais de 5 anos.",
     "status": "Pendente"
+  },
+  {
+    "id": "348c5bfc-f96d-43f3-99e3-2fa905b97406",
+    "timestamp": "2026-05-21T22:05:04.270335",
+    "character_name": "Haokö",
+    "realm": "Nemesis",
+    "class_name": "Mago",
+    "role": "DPS",
+    "offspec": "Healer",
+    "specs": [
+      "Gélido"
+    ],
+    "ilvl": 287,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "Haokoo",
+    "logs_link": "https://raider.io/characters/us/nemesis/Haok%C3%B6",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
