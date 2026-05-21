@@ -758,27 +758,40 @@ if pagina == "📝 Formulário de Aplicação":
 
             st.divider()
 
-            st.markdown("### 🛡️ Cores Disponíveis")
+            st.markdown("### 🛡️ Core Desejado")
+
+            core_placeholder = "Selecione um core"
+
+            core_options = [
+                core_placeholder
+            ] + list(cores_info.keys())
+
+            selected_core_option = st.radio(
+                "Escolha apenas um core *",
+                options=core_options,
+                index=0
+            )
 
             selected_cores = []
 
-            for core_name, info in cores_info.items():
+            if selected_core_option != core_placeholder:
+
+                selected_cores = [
+                    selected_core_option
+                ]
+
+                selected_core_info = cores_info[selected_core_option]
 
                 with st.expander(
-                    f"{core_name} • Líder: {info['leader']}"
+                    f"Regras do {selected_core_option} • Líder: {selected_core_info['leader']}",
+                    expanded=True
                 ):
 
                     st.caption(
-                        f"Ilvl mínimo: {info['ilvl_min']}+"
+                        f"Ilvl mínimo: {selected_core_info['ilvl_min']}+"
                     )
 
-                    st.markdown(info["rules"])
-
-                    if st.checkbox(
-                        f"Aplicar para {core_name}",
-                        key=core_name
-                    ):
-                        selected_cores.append(core_name)
+                    st.markdown(selected_core_info["rules"])
 
             st.divider()
 
@@ -1031,7 +1044,7 @@ elif pagina == "🔐 Painel Admin":
                         width="small"
                     ),
                     "cores": st.column_config.TextColumn(
-                        "Cores",
+                        "Core",
                         width="medium"
                     ),
                     "status": st.column_config.TextColumn(
@@ -1129,7 +1142,7 @@ elif pagina == "🔐 Painel Admin":
                         )
 
                         st.write(
-                            f"**Cores:** {cores}"
+                            f"**Core:** {cores}"
                         )
 
                         st.write(
