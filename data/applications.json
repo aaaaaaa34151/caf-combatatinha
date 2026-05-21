@@ -1239,5 +1239,30 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "894cf3c5-31c1-43af-b568-f4863f5f93ee",
+    "timestamp": "2026-05-21T00:05:13.443262",
+    "character_name": "Thillelille",
+    "realm": "Azralon",
+    "class_name": "Monge",
+    "role": "DPS",
+    "offspec": "Tank",
+    "specs": [
+      "Mestre Cervejeiro",
+      "Andarilho do Vento"
+    ],
+    "ilvl": 287,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "iuri7up",
+    "logs_link": "https://raider.io/characters/us/azralon/Thillelille",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)",
+      "Time Sylvanas (Mítico Soft)",
+      "Time Dragonetinhos (Heroico)",
+      "Time Café com Açúcar (Heroico)"
+    ],
+    "motivation": "Jogo wow desde  Cataclysm - Pandaria, entretanto fiquei sem jogar Legion e BFA. Tenho experiencia em raid por mais de 5 anos.",
+    "status": "Pendente"
   }
 ]
