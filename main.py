@@ -540,6 +540,18 @@ def reset_specs():
                 st.session_state[key] = False
 
 
+def select_single_core(changed_key):
+
+    if st.session_state.get(changed_key):
+
+        for index in range(len(cores_info)):
+
+            key = f"core_select_{index}"
+
+            if key != changed_key and key in st.session_state:
+                st.session_state[key] = False
+
+
 def safe_json_list(value):
 
     try:
@@ -673,208 +685,201 @@ if pagina == "📝 Formulário de Aplicação":
             on_change=reset_specs
         )
 
-        with st.form("form_aplicacao"):
+        col1, col2 = st.columns(2)
 
-            col1, col2 = st.columns(2)
+        with col1:
 
-            with col1:
-
-                name = st.text_input(
-                    "Nome do Personagem *"
-                )
-
-                realm = st.text_input(
-                    "Realm *",
-                    placeholder="Ex: Area-52"
-                )
-
-            with col2:
-
-                ilvl = st.number_input(
-                    "Item Level *",
-                    min_value=260,
-                    max_value=700,
-                    value=280
-                )
-
-            st.divider()
-
-            st.markdown("### ⚔️ Especializações")
-
-            selected_specs = []
-
-            spec_cols = st.columns(2)
-
-            specs = classes_data.get(classe, [])
-
-            for index, spec in enumerate(specs):
-
-                with spec_cols[index % 2]:
-
-                    if st.checkbox(
-                        spec,
-                        key=f"spec_{spec}"
-                    ):
-                        selected_specs.append(spec)
-
-            st.divider()
-
-            role = st.selectbox(
-                "Função Principal *",
-                [
-                    "DPS",
-                    "Healer",
-                    "Tank"
-                ]
+            name = st.text_input(
+                "Nome do Personagem *"
             )
 
-            offspec = st.selectbox(
-                "Tem Off Spec?",
-                [
-                    "Não",
-                    "DPS",
-                    "Healer",
-                    "Tank"
-                ]
+            realm = st.text_input(
+                "Realm *",
+                placeholder="Ex: Area-52"
             )
 
-            experience = st.selectbox(
-                "Experiência em Raids Endgame *",
-                [
-                    "Menos de 1 ano",
-                    "1-3 anos",
-                    "3-6 anos",
-                    "Mais de 6 anos (Veterano)"
-                ]
+        with col2:
+
+            ilvl = st.number_input(
+                "Item Level *",
+                min_value=260,
+                max_value=700,
+                value=280
             )
 
-            discord = st.text_input(
-                "Discord *"
-            )
+        st.divider()
 
-            logs_link = st.text_input(
-                "Raider.IO ou WarcraftLogs"
-            )
+        st.markdown("### ⚔️ Especializações")
 
-            st.divider()
+        selected_specs = []
 
-            st.markdown("### 🛡️ Core Desejado")
+        spec_cols = st.columns(2)
 
-            core_placeholder = "Selecione um core"
+        specs = classes_data.get(classe, [])
 
-            core_options = [
-                core_placeholder
-            ] + list(cores_info.keys())
+        for index, spec in enumerate(specs):
 
-            selected_core_option = st.radio(
-                "Escolha apenas um core *",
-                options=core_options,
-                index=0
-            )
+            with spec_cols[index % 2]:
 
-            selected_cores = []
-
-            if selected_core_option != core_placeholder:
-
-                selected_cores = [
-                    selected_core_option
-                ]
-
-                selected_core_info = cores_info[selected_core_option]
-
-                with st.expander(
-                    f"Regras do {selected_core_option} • Líder: {selected_core_info['leader']}",
-                    expanded=True
+                if st.checkbox(
+                    spec,
+                    key=f"spec_{spec}"
                 ):
+                    selected_specs.append(spec)
 
-                    st.caption(
-                        f"Ilvl mínimo: {selected_core_info['ilvl_min']}+"
+        st.divider()
+
+        role = st.selectbox(
+            "Função Principal *",
+            [
+                "DPS",
+                "Healer",
+                "Tank"
+            ]
+        )
+
+        offspec = st.selectbox(
+            "Tem Off Spec?",
+            [
+                "Não",
+                "DPS",
+                "Healer",
+                "Tank"
+            ]
+        )
+
+        experience = st.selectbox(
+            "Experiência em Raids Endgame *",
+            [
+                "Menos de 1 ano",
+                "1-3 anos",
+                "3-6 anos",
+                "Mais de 6 anos (Veterano)"
+            ]
+        )
+
+        discord = st.text_input(
+            "Discord *"
+        )
+
+        logs_link = st.text_input(
+            "Raider.IO ou WarcraftLogs"
+        )
+
+        st.divider()
+
+        st.markdown("### 🛡️ Cores Disponíveis")
+
+        selected_cores = []
+
+        for index, (core_name, info) in enumerate(cores_info.items()):
+
+            core_key = f"core_select_{index}"
+
+            with st.expander(
+                f"{core_name} • Líder: {info['leader']}"
+            ):
+
+                st.caption(
+                    f"Ilvl mínimo: {info['ilvl_min']}+"
+                )
+
+                st.markdown(info["rules"])
+
+                if st.checkbox(
+                    f"Aplicar para {core_name}",
+                    key=core_key,
+                    on_change=select_single_core,
+                    args=(core_key,)
+                ):
+                    selected_cores.append(core_name)
+
+        st.caption(
+            "Você só pode escolher um core por aplicação."
+        )
+
+        st.divider()
+
+        motivation = st.text_area(
+            "Motivação",
+            placeholder=(
+                "Exemplo:\n"
+                "Jogo WoW desde Legion, tenho experiência em raid mítica, "
+                "sou pontual, gosto de progressão e procuro uma guilda "
+                "ativa para jogar Midnight."
+            )
+        )
+
+        submit = st.button(
+            "🚀 ENVIAR APLICAÇÃO",
+            width="stretch",
+            type="primary"
+        )
+
+        if submit:
+
+            if (
+                not name
+                or not realm
+                or not classe
+                or len(selected_specs) == 0
+                or not discord
+                or len(selected_cores) == 0
+            ):
+
+                st.error(
+                    "❌ Preencha todos os campos obrigatórios."
+                )
+
+            else:
+
+                new_application = {
+                    "id": str(uuid.uuid4()),
+                    "timestamp": datetime.now().isoformat(),
+                    "character_name": name.strip(),
+                    "realm": realm.strip(),
+                    "class_name": classe,
+                    "role": role,
+                    "offspec": offspec,
+                    "specs": selected_specs,
+                    "ilvl": int(ilvl),
+                    "experience": experience,
+                    "discord": discord.strip(),
+                    "logs_link": logs_link.strip(),
+                    "cores": selected_cores,
+                    "motivation": motivation.strip(),
+                    "status": "Pendente"
+                }
+
+                ok, error = save_new_application(new_application)
+
+                if ok:
+
+                    st.success(
+                        "✅ Aplicação enviada com sucesso!"
                     )
 
-                    st.markdown(selected_core_info["rules"])
-
-            st.divider()
-
-            motivation = st.text_area(
-                "Motivação",
-                placeholder=(
-                    "Exemplo:\n"
-                    "Jogo WoW desde Legion, tenho experiência em raid mítica, "
-                    "sou pontual, gosto de progressão e procuro uma guilda "
-                    "ativa para jogar Midnight."
-                )
-            )
-
-            submit = st.form_submit_button(
-                "🚀 ENVIAR APLICAÇÃO",
-                width="stretch",
-                type="primary"
-            )
-
-            if submit:
-
-                if (
-                    not name
-                    or not realm
-                    or not classe
-                    or len(selected_specs) == 0
-                    or not discord
-                    or len(selected_cores) == 0
-                ):
-
-                    st.error(
-                        "❌ Preencha todos os campos obrigatórios."
-                    )
+                    st.balloons()
 
                 else:
 
-                    new_application = {
-                        "id": str(uuid.uuid4()),
-                        "timestamp": datetime.now().isoformat(),
-                        "character_name": name.strip(),
-                        "realm": realm.strip(),
-                        "class_name": classe,
-                        "role": role,
-                        "offspec": offspec,
-                        "specs": selected_specs,
-                        "ilvl": int(ilvl),
-                        "experience": experience,
-                        "discord": discord.strip(),
-                        "logs_link": logs_link.strip(),
-                        "cores": selected_cores,
-                        "motivation": motivation.strip(),
-                        "status": "Pendente"
-                    }
+                    if str(error).startswith("duplicate::"):
 
-                    ok, error = save_new_application(new_application)
-
-                    if ok:
-
-                        st.success(
-                            "✅ Aplicação enviada com sucesso!"
+                        status_atual = str(error).replace(
+                            "duplicate::",
+                            ""
                         )
 
-                        st.balloons()
+                        st.error(
+                            f"❌ Já existe uma aplicação para esse personagem nesse realm. "
+                            f"Status atual: {status_atual}."
+                        )
 
                     else:
 
-                        if str(error).startswith("duplicate::"):
-
-                            status_atual = str(error).replace(
-                                "duplicate::",
-                                ""
-                            )
-
-                            st.error(
-                                f"❌ Já existe uma aplicação para esse personagem nesse realm. "
-                                f"Status atual: {status_atual}."
-                            )
-
-                        else:
-
-                            st.error(
-                                f"❌ Erro ao salvar no GitHub: {error}"
-                            )
+                        st.error(
+                            f"❌ Erro ao salvar no GitHub: {error}"
+                        )
 
 # =====================================================
 # ====================== ADMIN PAGE ===================
@@ -1044,7 +1049,7 @@ elif pagina == "🔐 Painel Admin":
                         width="small"
                     ),
                     "cores": st.column_config.TextColumn(
-                        "Core",
+                        "Cores",
                         width="medium"
                     ),
                     "status": st.column_config.TextColumn(
@@ -1142,7 +1147,7 @@ elif pagina == "🔐 Painel Admin":
                         )
 
                         st.write(
-                            f"**Core:** {cores}"
+                            f"**Cores:** {cores}"
                         )
 
                         st.write(
