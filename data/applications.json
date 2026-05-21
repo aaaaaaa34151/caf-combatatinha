@@ -1285,5 +1285,26 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "36795707-b371-4116-b45d-ebb2026d9c41",
+    "timestamp": "2026-05-21T23:10:05.272163",
+    "character_name": "Khaleus",
+    "realm": "Illidan",
+    "class_name": "Paladino",
+    "role": "DPS",
+    "offspec": "Tank",
+    "specs": [
+      "Retribuição"
+    ],
+    "ilvl": 280,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "Khaleus",
+    "logs_link": "https://www.warcraftlogs.com/character/us/illidan/khaleus",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "Estou procura de um grupo legal de raid",
+    "status": "Pendente"
   }
 ]
