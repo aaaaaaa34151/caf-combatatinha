@@ -318,6 +318,7 @@ def normalize_application(app):
     app.setdefault("ilvl", 0)
     app.setdefault("experience", "")
     app.setdefault("discord", "")
+    app.setdefault("whatsapp", "")
     app.setdefault("logs_link", "")
     app.setdefault("cores", [])
     app.setdefault("motivation", "")
@@ -613,6 +614,7 @@ def applications_to_dataframe(applications):
         "ilvl",
         "experience",
         "discord",
+        "whatsapp",
         "logs_link",
         "cores",
         "motivation",
@@ -705,6 +707,11 @@ if pagina == "📝 Formulário de Aplicação":
                 min_value=260,
                 max_value=700,
                 value=280
+            )
+
+            whatsapp = st.text_input(
+                "WhatsApp",
+                placeholder="Ex: +55 21 99999-9999"
             )
 
         st.divider()
@@ -845,6 +852,7 @@ if pagina == "📝 Formulário de Aplicação":
                     "ilvl": int(ilvl),
                     "experience": experience,
                     "discord": discord.strip(),
+                    "whatsapp": whatsapp.strip(),
                     "logs_link": logs_link.strip(),
                     "cores": selected_cores,
                     "motivation": motivation.strip(),
@@ -980,6 +988,7 @@ elif pagina == "🔐 Painel Admin":
 
             df_display["role"] = df_display["role"].fillna("Não informado")
             df_display["offspec"] = df_display["offspec"].fillna("Não")
+            df_display["whatsapp"] = df_display["whatsapp"].fillna("")
 
             aprovados = len(
                 df[df["status"] == "Aprovado"]
@@ -1014,6 +1023,8 @@ elif pagina == "🔐 Painel Admin":
                         "offspec",
                         "ilvl",
                         "cores",
+                        "discord",
+                        "whatsapp",
                         "status"
                     ]
                 ],
@@ -1052,6 +1063,14 @@ elif pagina == "🔐 Painel Admin":
                         "Cores",
                         width="medium"
                     ),
+                    "discord": st.column_config.TextColumn(
+                        "Discord",
+                        width="medium"
+                    ),
+                    "whatsapp": st.column_config.TextColumn(
+                        "WhatsApp",
+                        width="medium"
+                    ),
                     "status": st.column_config.TextColumn(
                         "Status",
                         width="small"
@@ -1084,6 +1103,12 @@ elif pagina == "🔐 Painel Admin":
                     row["offspec"]
                     if row["offspec"]
                     else "Não"
+                )
+
+                whatsapp_value = (
+                    row["whatsapp"]
+                    if row["whatsapp"]
+                    else "Não informado"
                 )
 
                 app_id = row["id"]
@@ -1137,6 +1162,10 @@ elif pagina == "🔐 Painel Admin":
 
                         st.write(
                             f"**Discord:** {row['discord']}"
+                        )
+
+                        st.write(
+                            f"**WhatsApp:** {whatsapp_value}"
                         )
 
                     with info2:
