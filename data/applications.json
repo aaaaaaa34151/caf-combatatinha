@@ -1390,5 +1390,27 @@
     ],
     "motivation": "jogo wow  blizzard desde de legion.  mas vim de server pirata wowbr que é LK joguei la por uns 4 anos até vir pra blizzard no legion",
     "status": "Pendente"
+  },
+  {
+    "id": "e45f26f1-8f7e-47d5-94c5-f9d6057e6a44",
+    "timestamp": "2026-05-25T12:44:54.917547",
+    "character_name": "Shyriuh",
+    "realm": "Area-52",
+    "class_name": "Paladino",
+    "role": "DPS",
+    "offspec": "Tank",
+    "specs": [
+      "Proteção"
+    ],
+    "ilvl": 283,
+    "experience": "Menos de 1 ano",
+    "discord": "Vlvinicius",
+    "whatsapp": "11996707442",
+    "logs_link": "2500",
+    "cores": [
+      "Time Sylvanas (Mítico Soft)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
