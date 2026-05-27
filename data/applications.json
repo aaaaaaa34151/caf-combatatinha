@@ -1412,5 +1412,28 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "d61e84f7-28aa-44f1-b259-ec7244c2e3ee",
+    "timestamp": "2026-05-27T21:01:12.079772",
+    "character_name": "Specnature",
+    "realm": "Stormerage",
+    "class_name": "Druida",
+    "role": "DPS",
+    "offspec": "Healer",
+    "specs": [
+      "Equilíbrio",
+      "Restauração"
+    ],
+    "ilvl": 280,
+    "experience": "Menos de 1 ano",
+    "discord": "christianpnn_85592",
+    "whatsapp": "+55 61 99866 5451",
+    "logs_link": "https://raider.io/characters/us/stormrage/Specnature",
+    "cores": [
+      "Time Dragonetinhos (Heroico)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
