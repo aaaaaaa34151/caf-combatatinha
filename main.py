@@ -157,11 +157,9 @@ classes_data = {
 # =====================================================
 
 cores_info = {
-
     "Time Garrosh (Mítico Hardcore)": {
         "leader": "Mortalos",
         "ilvl_min": 280,
-
         "rules": """
 **🏆 TIME GARROSH (MÍTICO HARDCORE)**
 
@@ -177,93 +175,25 @@ Conquistar Cutting Edge.
 
 ---
 
-### 📜 Regras de Conduta
+### 📜 Regras
 
-• Respeito e boa convivência são fundamentais para manter um ambiente agradável e produtivo para todos.
+• Respeito entre todos.
 
-• Cobranças entre jogadores não serão permitidas. Qualquer feedback ou cobrança será feito exclusivamente pelo Raid Leader ou pela Diretoria.
+• Feedback apenas pelo Raid Leader.
 
-• Zero toxicidade. Não serão toleradas ofensas, provocações ou atitudes que prejudiquem o grupo.
-
----
-
-### ✅ Requisitos Mínimos
-
-• Item Level mínimo: 280.
-
-• Gemas no nível máximo e encantamentos no nível máximo em todos os equipamentos relevantes.
-
-• A presença é de extrema importância para o progresso do Core e para o alcance dos nossos objetivos.
-
-• Atrasos ou faltas devem ser comunicados com antecedência, sempre que possível.
-
-• O sistema de loot será realizado via RCLootCouncil, utilizando um sistema de pontuação para garantir uma distribuição justa e transparente dos itens.
-"""
-    },
-
-    "Time Sylvanas (Mítico Soft)": {
-        "leader": "Grilo",
-        "ilvl_min": 276,
-
-        "rules": """
-**🏹 TIME SYLVANAS (MÍTICO SOFT)**
-
-**Filosofia:**  
-Progressão consistente sem virar obrigação.  
-Queremos matar bosses míticos mantendo o ambiente saudável.
+• Zero toxicidade.
 
 ---
 
-### 📅 Dias e Horários
-- Quartas e Quintas-feiras
-- 20h00 às 22h00
-- Pode haver extensão se todos concordarem
+### ✅ Requisitos
 
----
+• Ilvl mínimo 280.
 
-### 📜 Regras Principais
-- Presença mínima: 75-80%
-- Avisar falta com antecedência
-- Preparação obrigatória
-  - Encantos
-  - Gemas
-  - Consumíveis
-  - Estratégia
-- Comunicação limpa durante as pulls
-- Loot por upgrade / bis
-- Erros são corrigidos, não humilhados
-"""
-    },
+• Gemas e encantamentos máximos.
 
-    "Time Dragonetinhos (Heroico)": {
-        "leader": "Sakiv",
-        "ilvl_min": 270,
+• Presença obrigatória.
 
-        "rules": """
-**🐉 TIME DRAGONETINHOS (HEROICO)**
-
-Core Heroico focado em:
-- Diversão
-- Aprendizado
-- Loot
-
-Ambiente descontraído para progressão.
-"""
-    },
-
-    "Time Café com Açúcar (Heroico)": {
-        "leader": "Klebrimbor",
-        "ilvl_min": 270,
-
-        "rules": """
-**☕ TIME CAFÉ COM AÇÚCAR (HEROICO)**
-
-Core Heroico leve e agradável.
-
-Ideal para quem quer:
-- Jogar relaxado
-- Fazer progressão
-- Manter qualidade sem pressão excessiva
+• Loot via RCLootCouncil.
 """
     }
 }
