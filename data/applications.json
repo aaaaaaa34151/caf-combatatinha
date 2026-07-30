@@ -1744,5 +1744,27 @@
     ],
     "motivation": "",
     "status": "Pendente"
+  },
+  {
+    "id": "05b09438-975d-4379-bc2d-a22225777b88",
+    "timestamp": "2026-07-30T01:42:03.246730",
+    "character_name": "Valioso",
+    "realm": "azralon",
+    "class_name": "Xamã",
+    "role": "Healer",
+    "offspec": "Não",
+    "specs": [
+      "Restauração"
+    ],
+    "ilvl": 291,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "allyson_layon",
+    "whatsapp": "+55 81 9 9606-0642",
+    "logs_link": "https://raider.io/characters/us/azralon/Valioso",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
