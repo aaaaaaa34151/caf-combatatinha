@@ -2100,5 +2100,27 @@
     ],
     "motivation": "UE BORA, endgame q é o jogo",
     "status": "Pendente"
+  },
+  {
+    "id": "2a351fc4-fd72-4eec-9f1d-0bb8216d23c4",
+    "timestamp": "2026-08-02T15:17:22.975487",
+    "character_name": "Zebus",
+    "realm": "Stormrage",
+    "class_name": "Druida",
+    "role": "DPS",
+    "offspec": "Não",
+    "specs": [
+      "Equilíbrio"
+    ],
+    "ilvl": 292,
+    "experience": "Mais de 6 anos (Veterano)",
+    "discord": "RenatoSilva#8731",
+    "whatsapp": "34991526077",
+    "logs_link": "https://raider.io/characters/us/stormrage/Zebus",
+    "cores": [
+      "Time Garrosh (Mítico Hardcore)"
+    ],
+    "motivation": "",
+    "status": "Pendente"
   }
 ]
